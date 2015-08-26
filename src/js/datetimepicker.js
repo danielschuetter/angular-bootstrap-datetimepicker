@@ -108,7 +108,7 @@
         template: '<div class="datetimepicker table-responsive">' +
         '<table class="table table-striped  {{ data.currentView }}-view"' +
         '"data-ng-swipe-left=\"changeView(data.currentView, data.leftDate, $event)\""' +
-        "data-ng-swipe-right=\"changeView(data.currentView, data.rightDate, $event)\""' +
+        '"data-ng-swipe-right=\"changeView(data.currentView, data.rightDate, $event)\""' +
         '">" +>' +
         '   <thead>' +
         '       <tr>' +
