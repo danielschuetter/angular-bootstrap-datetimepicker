@@ -106,12 +106,15 @@
         restrict: 'E',
         require: 'ngModel',
         template: '<div class="datetimepicker table-responsive">' +
-        '<table class="table table-striped  {{ data.currentView }}-view">' +
+        '<table class="table table-striped  {{ data.currentView }}-view"' +
+        '"data-ng-swipe-left=\"changeView(data.currentView, data.leftDate, $event)\""' +
+        "data-ng-swipe-right=\"changeView(data.currentView, data.rightDate, $event)\""' +
+        '">" +>' +
         '   <thead>' +
         '       <tr>' +
-        '           <th class="left" data-ng-click="changeView(data.currentView, data.leftDate, $event)" data-ng-show="data.leftDate.selectable"><i class="glyphicon glyphicon-arrow-left"/></th>' +
+        '           <th class="left" data-ng-click="changeView(data.currentView, data.leftDate, $event)" data-ng-show="data.leftDate.selectable"><icon name="chevron-left" size="16"/></th>' +
         '           <th class="switch" colspan="5" data-ng-show="data.previousViewDate.selectable" data-ng-click="changeView(data.previousView, data.previousViewDate, $event)">{{ data.previousViewDate.display }}</th>' +
-        '           <th class="right" data-ng-click="changeView(data.currentView, data.rightDate, $event)" data-ng-show="data.rightDate.selectable"><i class="glyphicon glyphicon-arrow-right"/></th>' +
+        '           <th class="right" data-ng-click="changeView(data.currentView, data.rightDate, $event)" data-ng-show="data.rightDate.selectable"><icon name="chevron-right" size="16"/></th>' +
         '       </tr>' +
         '       <tr>' +
         '           <th class="dow" data-ng-repeat="day in data.dayNames" >{{ day }}</th>' +
