@@ -109,7 +109,8 @@
         '<table class="table table-striped  {{ data.currentView }}-view"' +
         '"data-ng-swipe-left=\"changeView(data.currentView, data.leftDate, $event)\""' +
         '"data-ng-swipe-right=\"changeView(data.currentView, data.rightDate, $event)\""' +
-        '">" +>' +
+        '">' +
+
         '   <thead>' +
         '       <tr>' +
         '           <th class="left" data-ng-click="changeView(data.currentView, data.leftDate, $event)" data-ng-show="data.leftDate.selectable"><icon name="chevron-left" size="16"/></th>' +
