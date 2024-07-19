@@ -353,7 +353,7 @@
       }
 
       function $render () {
-        $scope.changeView(configuration.startView, new DateObject({utcDateValue: getUTCTime(ngModelController.$viewValue)}))
+        $scope.changeView(configuration.startView, new DateObject({utcDateValue: getUTCTime(ngModelController.$viewValue || configuration.initDate)}))
       }
 
       function startOfDecade (milliseconds) {
@@ -512,6 +512,7 @@
         'parseFormat',
         'renderOn',
         'startView',
+        'initDate',
         'screenReader'
       ]
 
@@ -536,6 +537,10 @@
 
       if (validViews.indexOf(configuration.minView) > validViews.indexOf(configuration.startView)) {
         throw new Error('startView must be greater than minView')
+      }
+
+      if(configuration.initDate && !angular.isString(configuration.initDate)) {
+        throw new Error('initDate must be a string')
       }
 
       if (!angular.isNumber(configuration.minuteStep)) {
